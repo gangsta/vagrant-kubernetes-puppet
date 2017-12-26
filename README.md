@@ -4,8 +4,8 @@
 
 ## Overview
 
-*The Vagrant-Kubernetes-Puppet module provides the installation procedure for Kubernetes,Etcd,Flanneld,Docker with Puppet at CentOS7_vagrantbox including the Kubernetes API server.
-*If you have EPEL already activated, the module epel is not necessary.
+* The Vagrant-Kubernetes-Puppet module provides the installation procedure for Kubernetes,Etcd,Flanneld,Docker with Puppet at CentOS7_vagrantbox including the Kubernetes API server.
+* If you have EPEL already activated, the module epel is not necessary.
 
 
 ## Setup
@@ -47,4 +47,6 @@ When you're done, you can shut down the cluster using
 vagrant destroy -f
 ```
 ### If you want to change any of the configuration/scripts run
+```
 vagrant provision
+```
