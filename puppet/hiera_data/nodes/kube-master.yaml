@@ -1,0 +1,36 @@
+---
+role:
+    - roles::kube_master
+    - etcd
+    - roles::etcd_keycustom
+    - flannel
+    - kubernetes
+    - kubernetes::master
+    - kubernetes::apiserver
+    - kubernetes::controller_manager
+    - kubernetes::scheduler
+
+#etcd_key conf
+#etcd::etcd_key:
+#  '/jexia.cloud/network/config':
+#    value: '{"Network": "172.20.0.0/16", "SubnetLen": 24, "Backend": { "Type": "vxlan", "VNI": 1 } }'
+
+#etcd conf
+etcd::listen_client_urls: 'http://0.0.0.0:2379'
+etcd::listen_peer_urls: 'http://localhost:2380'
+etcd::advertise_client_urls: "http://0.0.0.0:2379"
+
+#flannel
+flannel::ensure: 'latest'
+flannel::etcd_endpoints: 'http://kube-master.jexia.cloud:2379'
+flannel::etcd_prefix: '/jexia.cloud/network'
+
+
+#kubernetes
+kubernetes::scheduler::master: 'http://kube-master.jexia.cloud:8080'
+kubernetes::config::kube_master: 'http://kube-master.jexia.cloud:8080'
+kubernetes::apiserver::kube_etcd_servers: 'http://kube-master.jexia.cloud:2379'
+kubernetes::apiserver::kube_api_address: '0.0.0.0'
+kubernetes::apiserver::api_key_path: '/tmp/serviceaccount.key'
+kubernetes::apiserver::kube_service_addresses: '10.254.0.0/16'
+kubernetes::controller_manager::api_key_path: '/tmp/serviceaccount.key'

@@ -1,0 +1,19 @@
+---
+role:
+    - roles::kube_node
+    - docker
+    - flannel
+    - kubernetes
+    - kubernetes::kubelet
+    - kubernetes::kube_proxy
+
+
+kubernetes::node::kube_master: 'http://kube-master.jexia.cloud:8080'
+kubernetes::kubelet::kubelet_api_server: 'http://kube-master.jexia.cloud:8080'
+kubernetes::kubelet::kubelet_address: '0.0.0.0'
+
+docker::selinux_enabled: false
+
+flannel::ensure: 'latest'
+flannel::etcd_endpoints: 'http://kube-master.jexia.cloud:2379'
+flannel::etcd_prefix: '/jexia.cloud/network'
