@@ -2,15 +2,15 @@
 
 [![Jexia](https://forum.golangbridge.org/uploads/default/optimized/2X/c/c4746b35435181e88a330357f4feb5566d3fbbe2_1_690x324.png)](http://jexia.com)
 
-##Overview
+## Overview
 
 *The Vagrant-Kubernetes-Puppet module provides the installation procedure for Kubernetes,Etcd,Flanneld,Docker with Puppet at CentOS7_vagrantbox including the Kubernetes API server.
 *If you have EPEL already activated, the module epel is not necessary.
 
 
-##Setup
+## Setup
 
-###Usage
+### Usage
 
 
 To get started, perform a git clone on. Make sure you have [Vagrant installed](https://docs.vagrantup.com/v2/installation/), and also [VirtualBox](https://www.virtualbox.org/).
@@ -45,7 +45,6 @@ You can run the kubernetes deployment and  service on your cluster by issuing:
 When you're done, you can shut down the cluster using
 ```
 vagrant destroy -f
-
+```
 # If you want to change any of the configuration/scripts run
 vagrant provision
-```
