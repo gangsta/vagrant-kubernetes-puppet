@@ -46,5 +46,5 @@ When you're done, you can shut down the cluster using
 ```
 vagrant destroy -f
 ```
-# If you want to change any of the configuration/scripts run
+### If you want to change any of the configuration/scripts run
 vagrant provision
