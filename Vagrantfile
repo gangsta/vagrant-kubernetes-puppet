@@ -37,4 +37,13 @@ Vagrant.configure(2) do |config|
     end
   end
 
+  config.vm.define "docker" do |node|
+    node.vm.hostname = "docker.jexia.cloud"
+    node.vm.network "private_network", ip: "192.168.10.62"
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 1
+    end
+  end
+
 end

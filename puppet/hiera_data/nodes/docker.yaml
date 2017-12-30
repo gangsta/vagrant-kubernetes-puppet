@@ -1,0 +1,4 @@
+---
+role:
+    - roles::docker
+    - docker
