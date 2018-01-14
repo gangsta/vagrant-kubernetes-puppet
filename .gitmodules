@@ -7,12 +7,12 @@
 [submodule "puppet/modules/concat"]
 	path = puppet/modules/concat
 	url = https://github.com/puppetlabs/puppetlabs-concat.git
-[submodule "puppet/modules/docker"]
-	path = puppet/modules/docker
-	url = https://github.com/cristifalcas/puppet-docker.git
 [submodule "puppet/modules/etcd"]
 	path = puppet/modules/etcd
 	url = https://github.com/kalinux/puppet-etcd.git
 [submodule "puppet/modules/kubernetes"]
 	path = puppet/modules/kubernetes
 	url = https://github.com/kalinux/puppet-kubernetes.git
+[submodule "puppet/modules/docker"]
+	path = puppet/modules/docker
+	url = https://github.com/kalinux/puppet-docker.git
