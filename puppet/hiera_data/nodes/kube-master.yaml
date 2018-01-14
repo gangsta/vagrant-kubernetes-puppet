@@ -24,6 +24,7 @@ etcd::advertise_client_urls: "http://0.0.0.0:2379"
 flannel::ensure: 'latest'
 flannel::etcd_endpoints: 'http://kube-master.jexia.cloud:2379'
 flannel::etcd_prefix: '/jexia.cloud/network'
+flannel::manage_docker: false
 
 
 #kubernetes

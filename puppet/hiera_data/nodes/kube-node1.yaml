@@ -1,7 +1,6 @@
 ---
 role:
     - roles::kube_node
-    - docker
     - flannel
     - kubernetes
     - kubernetes::kubelet
@@ -17,3 +16,4 @@ docker::selinux_enabled: false
 flannel::ensure: 'latest'
 flannel::etcd_endpoints: 'http://kube-master.jexia.cloud:2379'
 flannel::etcd_prefix: '/jexia.cloud/network'
+flannel::manage_docker: false
